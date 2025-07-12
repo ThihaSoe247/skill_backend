@@ -1,11 +1,9 @@
 const express = require("express");
-
 const router = express.Router();
-delete require.cache[require.resolve("../controllers/AuthController")];
 
-const authController = require("../controllers/AuthController");
+const authC = require("../controllers/authController");
 
-router.post("/register", authController.register);
-router.post("/login", authController.login);
+router.post("/register", authC.register);
+router.post("/login", authC.login);
 
-module.exports = router;
+module.exports = router; // ✅ Only the router is exported
