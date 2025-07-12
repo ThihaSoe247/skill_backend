@@ -8,14 +8,23 @@ const skillRoutes = require("./routes/skills");
 dotenv.config();
 const app = express();
 app.use(express.json());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://skill-frontend-tlr3.vercel.app",
+];
+
 app.use(
   cors({
-    //Cookies allow
-    origin: "http://localhost:5173",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
-// app.use(morgen("dev"));
 
 app.get("/", (req, res) => {
   res.send("SkillSwap API is running");
