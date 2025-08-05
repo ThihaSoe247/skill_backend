@@ -9,7 +9,13 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use(cors({ origin: "*", credentials: true }));
+app.use(
+  cors({
+    origin:
+      "https://skill-frontend-otlkdf27t-thiha-soes-projects-42b1b68e.vercel.app",
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("SkillSwap API is running");
