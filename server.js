@@ -11,8 +11,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin:
-      "https://skill-frontend-otlkdf27t-thiha-soes-projects-42b1b68e.vercel.app",
+    origin: "*",
     credentials: true,
   })
 );
