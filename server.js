@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-const allowedOrigins = ["https://skill-frontend-six.vercel.app"];
+const allowedOrigins = ["https://skill-frontend-henna.vercel.app"];
 app.use(
   cors({
     origin: function (origin, callback) {
